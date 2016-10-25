@@ -31,7 +31,11 @@
             <div id="menu">
                 <ui:insert name="menu" >
                     <h:form>  
+                        
                         <p:menubar styleClass="menu"  model="#{menuBeen.model}">
+                            <f:facet name="options">
+                                <p:commandButton id="btn1" style="background: #B40404; color:#FEFEFE;" value ="cerrar sesión" action="#{login.clssession()}" />
+                            </f:facet>  
                         </p:menubar>
                     </h:form>
                 </ui:insert>

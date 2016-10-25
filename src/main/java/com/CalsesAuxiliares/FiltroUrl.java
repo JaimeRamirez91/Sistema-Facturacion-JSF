@@ -1,6 +1,7 @@
 
 package com.CalsesAuxiliares;
 
+import com.entidades.Usuarios;
 import java.io.IOException;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
@@ -30,7 +31,49 @@ public class FiltroUrl implements PhaseListener{
                 }
             }
         }
-}
+         
+        //Obtencian de los datos del usuario
+        Usuarios usuario = (Usuarios) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+ 
+        //reglas de navegación para las paginas del administrador       
+        //Producto
+        if(fc.getViewRoot().getViewId().contains("Producto.xhtml") == true && !usuario.getTipo().getTipoUsr().equals("A")){
+            try {
+                     ec.redirect(ec.getRequestContextPath() + "/faces/Vistas/Inicio/Login.xhtml");
+                } catch (IOException ex) {
+                   
+                } 
+        }
+        
+       //Clientes
+        if(fc.getViewRoot().getViewId().contains("Clientes.xhtml") == true && !usuario.getTipo().getTipoUsr().equals("A")){
+            try {
+                     ec.redirect(ec.getRequestContextPath() + "/faces/Vistas/Inicio/Login.xhtml");
+                } catch (IOException ex) {
+                   
+                } 
+        }
+        
+        //Proveedor
+        if(fc.getViewRoot().getViewId().contains("Proveedor.xhtml") == true && !usuario.getTipo().getTipoUsr().equals("A")){
+            try {
+                     ec.redirect(ec.getRequestContextPath() + "/faces/Vistas/Inicio/Login.xhtml");
+                } catch (IOException ex) {
+                   
+                } 
+        }
+            
+        //Categorias
+        if(fc.getViewRoot().getViewId().contains("Categorias.xhtml") == true && !usuario.getTipo().getTipoUsr().equals("A")){
+            try {
+                     ec.redirect(ec.getRequestContextPath() + "/faces/Vistas/Inicio/Login.xhtml");
+                } catch (IOException ex) {
+                   
+                } 
+        }
+            
+      
+  }
     @Override
     public void beforePhase(PhaseEvent pe) {
        

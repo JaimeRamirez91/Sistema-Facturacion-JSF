@@ -26,6 +26,22 @@ public class loginControllerBeen implements Serializable{
     }
     
     public void login(ActionEvent event) throws IOException{
+        
+        //invalidamos secciones anteriores para evitar asurpación de identidad
+        if(vrfSession()== true){
+         //Memsaje de una vista a otra   
+         FacesContext context = FacesContext.getCurrentInstance();
+         context.getExternalContext().getFlash().setKeepMessages(true);
+         context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "!!Advertencia!!", "Antes de iniciar una nueva sessión cierre la actual."));
+         
+         //redireccionar
+         ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
+         ec.redirect(ec.getRequestContextPath()+"/faces/Vistas/Inicio/Inicio.xhtml"); 
+          
+         
+        }else{
+        
+        //si todo fue bien creamos la session        
         RequestContext context = RequestContext.getCurrentInstance();
         FacesMessage message = null;
         boolean loggedIn = false;
@@ -35,7 +51,10 @@ public class loginControllerBeen implements Serializable{
         if(usr != null) {
             loggedIn = true;
             FacesContext.getCurrentInstance().getExternalContext().getSessionMap().put("usuario", this.usr);
-            message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Bienbenido: ", username);
+            //Memsaje de una vista a otra   
+            FacesContext contextaux = FacesContext.getCurrentInstance();
+            contextaux.getExternalContext().getFlash().setKeepMessages(true);
+            contextaux.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "!!Bienbenido!!", usr.getAliass()));
             //Es de JSF 
             ExternalContext ec = FacesContext.getCurrentInstance().getExternalContext();
             ec.redirect(ec.getRequestContextPath()+"/faces/Vistas/Inicio/Inicio.xhtml");
@@ -48,6 +67,9 @@ public class loginControllerBeen implements Serializable{
          
         FacesContext.getCurrentInstance().addMessage(null, message);
         context.addCallbackParam("loggedIn", loggedIn);
+        
+        
+        }
     }  
     /*    Este es de internet
     public void logout() throws IOException {
@@ -56,6 +78,8 @@ public class loginControllerBeen implements Serializable{
     ec.redirect(ec.getRequestContextPath());
    }
     */
+    
+    //Cierre de sessiones
     public void clssession() throws IOException{
         this.username = null;
         this.password = null;
@@ -67,6 +91,19 @@ public class loginControllerBeen implements Serializable{
         FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         ec.invalidateSession();
         ec.redirect(ec.getRequestContextPath());
+        
+        }
+    //verificaccion de sessiones
+    public boolean vrfSession(){
+     Usuarios us = (Usuarios) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+      boolean bandera = false;
+     if(us == null){
+     
+     }
+     else{
+       bandera = true;
+     }
+     return bandera;
     }
 
      public String getUsername() {

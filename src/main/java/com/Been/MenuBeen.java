@@ -2,11 +2,13 @@ package com.Been;
 import com.DaoImp.MenuDaoImp;
 import com.DaoInterface.MenuDao;
 import com.entidades.Menu;
+import com.entidades.Usuarios;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import org.primefaces.model.menu.DefaultMenuItem;
 import org.primefaces.model.menu.DefaultMenuModel;
 import org.primefaces.model.menu.DefaultSubMenu;
@@ -58,11 +60,11 @@ public class MenuBeen implements Serializable{
         this.model = model;
     }
     
-    public void EstablecerPermisos(){  
+    public void EstablecerPermisos(){
+        Usuarios us = (Usuarios) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
+      
            for(Menu m: lista){
-               System.out.println(m.getTipo());
-                System.out.println("--------------------------------------------");
-              if(m.getTipo().equals("S")){
+              if(m.getTipo().equals("S") && m.getTipoUsruario().equals(us.getTipo().getTipoUsr())){
               DefaultSubMenu  firstsubmenu = new DefaultSubMenu(m.getNombre());
               for(Menu i: lista){
                  Menu submenu= i.getSubmenu();
@@ -79,7 +81,7 @@ public class MenuBeen implements Serializable{
               }
               model.addElement(firstsubmenu);
               }else{
-                  if(m.getSubmenu() == null){
+                  if(m.getSubmenu() == null &&  m.getTipoUsruario().equals(us.getTipo().getTipoUsr())){
                   DefaultMenuItem item = new DefaultMenuItem(m.getNombre());
                   model.addElement(item);}
               
