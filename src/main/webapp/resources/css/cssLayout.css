@@ -1,39 +1,23 @@
-@media only screen and (min-width: 768px) {
-#top {
-     height: 40px;
+/*#######################################Por componenetes#######################################*/
+#top{
+    height: 40px;
     position: relative;
-    
-   /* background-color: #446AAF; */
-        background: -webkit-linear-gradient(rgba(3,3,3,0),rgba(1,1,1,0)); /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(rgba(3,3,3,0),rgba(1,1,1,0)); /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(rgba(100,100,100,1),rgba(20,20,20,1)); /* For Firefox 3.6 to 15 */
-        background: linear-gradient(rgba(100,100,100,1),rgba(20,20,20,1)); /* Standard syntax */
-        /* #0489B1 */
+
+    /* fondo con textura*/
+    background: -webkit-linear-gradient(rgba(3,3,3,0),rgba(1,1,1,0)); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(rgba(3,3,3,0),rgba(1,1,1,0)); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(rgba(100,100,100,1),rgba(20,20,20,1)); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(rgba(100,100,100,1),rgba(20,20,20,1)); /* Standard syntax */
     color: white;
-    padding: 1%;
+    padding: 1%;   
 }
 #menu{
     position: relative;
     padding: 0%;
+    /*
     background: #2f5377;
- 
+    */
 }
-
-#content{
-         align-content: center;
-         margin-left: 150px;
-         margin-top: 20px;
-         width: 1000px;
-         height: 450px;
-         background:#dddddd;
-         /*Bordes redondeados*/
-         border-radius: 15px 15px 15px 15px;
-         -moz-border-radius: 15px 15px 15px 15px;
-         -webkit-border-radius: 15px 15px 15px 15px;
-         border: 0px ridge #3220a8;
-        
-}
-
 #left {
     float: left;
     background-color: #ece3a5;
@@ -47,15 +31,26 @@
     padding: 5px;
     width: 150px;
 }
+#top a:link, #top a:visited {
+    color: black;
+    font-weight : bold;
+    text-decoration: none;
+}
+
+#top a:link:hover, #top a:visited:hover  {
+    color: black;
+    font-weight : bold;
+    text-decoration : underline;
+}
+
+/*##################################Clases##################################################################*/
 
 .center_content {
     position: relative;
+    /*#828a87;*/
     background-color: #828a87; 
-        /*#339973;*/
-    padding: 5px;
-   
-   
-   
+    /*#339973;*/
+    padding: 5px;  
 }
 
 .left_content {
@@ -70,18 +65,677 @@
     margin: 0px 170px 0px 170px;
 }
 
-#top a:link, #top a:visited {
-  color: black;
-  font-weight : bold;
-  text-decoration: none;
+/*######################################Clases Hechar por mi####################################################*/
+/*Botones modificar estilo*/
+.btnModificar{
+
+    background: #158B4C !important;
+    color:#FEFEFE !important;
+}
+/*personalización para lo forms*/
+.formularios{
+    text-align: center !important;
+}
+.panel{
+    width: 100% !important;
+    height: 510px;
+    margin: 0 auto !important;
+    margin-top: -10px !important;
+    text-align: center !important;
+   background-color:  #F2F5F9 !important;
+
+} 
+
+.datosClienteFactura{
+    width: 100% !important;
+    height: 90px !important;
+    display: block !important;
+}
+.datosCliente{
+    padding: 1px !important;
+    text-align: justify !important;
+    font-size: 14px !important;
+    height: 86px !important;
+ 
+}
+.columna{
+    width: 120px !important;
+    text-align: justify !important;
+    font-size: 14px !important;
+   
 }
 
-#top a:link:hover, #top a:visited:hover  {
-  color: black;
-  font-weight : bold;
-  text-decoration : underline;
+.datosFactura{
+    padding: 1px !important;
+    text-align: center !important;
+    font-size: 14px !important;
+    size: 200px !important;
+
+}
+.dialogoClientes{
+    white-space: normal !important;
+    text-align: center !important;
+
+}
+.txtClientes{
+    font-size: 20px !important;
+}
+/*"GridBuscarDatosCliente*/
+/*
+.column1{width: 120px!important;height:auto !important;}
+.column2{width: 100px!important;height:auto !important;}
+.column3{width: 100px!important;height:auto !important;}
+.column4{width: 100px!important;height:auto !important; }
+.column5{width: 100px!important;height:auto !important;}
+.column6{width: 100px!important;height:auto !important;}
+
+
+
+/*######################################Clases de primefaces####################################################*/
+
+/*Estilos datatable*/
+/* modificacion del color de las filas de las p:datatables*/
+.ui-datatable-odd {
+    background: #ffffff !important;
+}
+
+.ui-datatable-even {
+    background: #F2F5F9 !important;
+}
+.ui-datatable .ui-datatable-titlebar{
+    background: #15768B !important;
+}
+
+.ui-datatable-header{
+    background: #15768B !important;
+    color: white;
+}
+/* panel de la factura*/
+.ui-panel  .ui-panel-titlebar{
+    background: #15768B !important;
+    color : white;
+    text-align: center;
+    font-size:  15px;
+}
+
+/* panel de la factura*/
+.ui-panelgrid head{
+    background-color: blue !important;
+}
+
+/*Posición de los mensajes emergentes*/
+.ui-growl {
+    margin-top: 100px;
+    right: 200px;  
+}
+
+/* color al heder con f:facet*/
+.ui-panel .ui.panel-grid .header{
+    background: #045491 !important;
+}
+
+/*###################################################HTML########################################################*/
+body {
+    font-size: 12px;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color: #000000;  
+    margin: 1px;
+    background-position: center center;
+    background-color: #6d695c;
+    background-image:
+        repeating-linear-gradient(120deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+        repeating-linear-gradient(60deg, rgba(255,255,255,.1), rgba(255,255,255,.1) 1px, transparent 1px, transparent 60px),
+        linear-gradient(60deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1)),
+        linear-gradient(120deg, rgba(0,0,0,.1) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1));
+    background-size: 70px 120px;
+    /* background-image: url('../images/fondo1.jpg');*/
+    height: 650px;
+}
+h2{
+    color: black;
+    font-size: 20px;
+}
+h3{
+    font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    border-bottom: 1px solid #AFAFAF; 
+    font-size:  16px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: buttonface;
+    text-align: center;
+}
+
+h1 {
+    font-family: Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    font-size:  15px;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0px;
+    color: white ;
+    text-align: center;
+}
+
+a:link, a:visited {
+    color: #045491;
+    font-weight : bold;
+    text-decoration: none;
+}
+
+a:link:hover, a:visited:hover  {
+    color: #045491;
+    font-weight : bold;
+    text-decoration : underline;
 }
 
 
+/*#################Implementacion bootstarap primefaces##############################*/
+.btn-default,
+.btn-primary,
+.btn-success,
+.btn-info,
+.btn-warning,
+.btn-danger {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, .2)  !important;
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075)  !important;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), 0 1px 1px rgba(0, 0, 0, .075)  !important;
+}
+.btn-default:active,
+.btn-primary:active,
+.btn-success:active,
+.btn-info:active,
+.btn-warning:active,
+.btn-danger:active,
+.btn-default.active,
+.btn-primary.active,
+.btn-success.active,
+.btn-info.active,
+.btn-warning.active,
+.btn-danger.active {
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)  !important;
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, .125)  !important;
+}
+.btn:active,
+
+.btn.active {
+    background-image: none  !important;
+}
+.btn-default {
+    text-shadow: 0 1px 0 #fff  !important;
+    background-image: -webkit-linear-gradient(top, #fff 0%, #e0e0e0 100%)  !important;
+    background-image:         linear-gradient(to bottom, #fff 0%, #e0e0e0 100%)  !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe0e0e0', GradientType=0)  !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+    background-repeat: repeat-x  !important;
+    border-color: #dbdbdb  !important;
+    border-color: #ccc  !important;
+}
+.btn-default:hover,
+.btn-default:focus {
+    background-color: #e0e0e0  !important;
+    background-position: 0 -15px  !important;
+}
+.btn-default:active,
+.btn-default.active {
+    background-color: #e0e0e0  !important;
+    border-color: #dbdbdb !important;
+}
+/*boton primary btn azul*/
+.btn-primary {
+    background: #15768B !important;
+    color: whitesmoke !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+    background-repeat: repeat-x !important;
+    border-color: #2b669a !important;
+    
+}
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #2d6ca2 !important;
+    background-position: 0 -15px !important;
+}
+
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #2d6ca2 !important;
+    border-color: #2b669a !important;
+}
+/*boton suces  btn verde*/
+
+.btn-success {
+    background: #158B4C !important;
+    color: white !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5cb85c', endColorstr='#ff419641', GradientType=0) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+    background-repeat: repeat-x !important;
+    border-color: #3e8f3e !important;
+   
+}
+.btn-success:hover,
+.btn-success:focus {
+    background-color: #419641 !important;
+    background-position: 0 -15px !important;
+}
+.btn-success:active,
+.btn-success.active {
+    background-color: #419641 !important;
+    border-color: #3e8f3e !important;
+}
+/*Btn danger*/
+.btn-danger {
+    background-image: -webkit-linear-gradient(top, #d9534f 0%, #c12e2a 100%)!important;
+    background-image:         linear-gradient(to bottom, #d9534f 0%, #c12e2a 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffd9534f', endColorstr='#ffc12e2a', GradientType=0)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false)!important;
+    background-repeat: repeat-x!important;
+    border-color: #b92c28!important;
+    color: white !important;
+}
+.btn-danger:hover,
+.btn-danger:focus {
+    background-color: #c12e2a!important;
+    background-position: 0 -15px!important;
+}
+.btn-danger:active,
+.btn-danger.active {
+    background-color: #c12e2a!important;
+    border-color: #b92c28!important;
+}
+/*btn-info*/
+.btn-info {
+    background-image: -webkit-linear-gradient(top, #5bc0de 0%, #2aabd2 100%)!important;
+    background-image:         linear-gradient(to bottom, #5bc0de 0%, #2aabd2 100%)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff5bc0de', endColorstr='#ff2aabd2', GradientType=0)!important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false)!important;
+    background-repeat: repeat-x!important;
+    border-color: #28a4c9!important;
+    color: white !important;
+}
+.btn-info:hover,
+.btn-info:focus {
+    background-color: #2aabd2!important;
+    background-position: 0 -15px!important;
+}
+.btn-info:active,
+.btn-info.active {
+    background-color: #2aabd2!important;
+    border-color: #28a4c9!important;
+}
+
+
+    /*------------------------menu-----------------------------------*/
+
+
+
+/*Menu html JS CSS responsive https://codepen.io/emredenx/pen/ojcxl/*/
+
+*{
+    margin:0;
+    padding:0;
+    text-decoration:none;
+}
+
+header{
+    position:relative;
+    width:100%;
+    background:#333;
+}
+.logo{
+    position:relative;
+    z-index:123;padding:10px;
+    font:18px verdana;
+    color:#6DDB07;
+    float:right;
+    width:10%
+}
+   
+
+.logo a{
+    color:#6DDB07;
+}
+nav{
+    position:relative;
+    width:100%;
+    margin:0 auto;
+
+}
+#cssmenu,#cssmenu ul,#cssmenu ul li,#cssmenu ul li a,#cssmenu #head-mobile{
+    border:0;
+    list-style:none;
+    line-height:1;
+    display:block;
+    position:relative;
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box
+
+}
+#cssmenu:after,#cssmenu > ul:after{
+    content:".";
+    display:block;
+    clear:both;
+    visibility:hidden;
+    line-height:0;
+    height:0
+}
+#cssmenu #head-mobile{
+    display:none
+}
+#cssmenu{
+   /*Tipo de letra*/ 
+   /* font-family:sans-serif;*/
+    background:#333
+
+}
+#cssmenu > ul > li{
+    float: left;
+}
+#cssmenu > ul > li > a{
+    padding:17px;
+    font-size:12px;
+    letter-spacing:1px;
+    text-decoration:none;
+    color:#ddd;
+    font-weight:700;
+}
+#cssmenu > ul > li:hover > a,#cssmenu ul li.active a{
+    color:#fff;
+}
+#cssmenu > ul > li:hover:not(.active), #cssmenu > ul > li > a :hover:not(.active){
+   background:   #424547 !important;
+    color: whitesmoke !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+    background-repeat: repeat-x !important;
+    border-color: #4b4d4f !important;
+}
+.active{
+   background: #15768B !important;
+    color: whitesmoke !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff428bca', endColorstr='#ff2d6ca2', GradientType=0) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false) !important;
+    background-repeat: repeat-x !important;
+    border-color: #2b669a !important;
+}
+#cssmenu > ul > li:hover,#cssmenu ul li.active:hover,#cssmenu ul li.active,#cssmenu ul li.has-sub.active:hover{
+    -webkit-transition:background .3s ease;
+    -ms-transition:background .3s ease;
+    transition:background .3s ease;
+}
+
+#cssmenu > ul > li.has-sub > a{
+    /*Espacio entre nombre de menu y el icono*/
+    padding-right:30px
+}
+#cssmenu > ul > li.has-sub > a:after{
+    position:absolute;
+    /*linea de --- del iconio submenu */
+    top:22px;
+    right:10px;
+    width:8px;
+    height:2px;
+    display:block;
+    background:#ddd;content:''
+}
+#cssmenu > ul > li.has-sub > a:before{
+    position:absolute;
+    /*linea de --- del iconio submenu */
+    top:19px;
+    right:13px;
+    display:block;
+    width:2px;
+    height:8px;
+    background:#ddd;
+    content:'';
+    -webkit-transition:all .25s ease;-ms-transition:all .25s ease;transition:all .25s ease
+}
+#cssmenu > ul > li.has-sub:hover > a:before{
+    top:23px;
+    height:0
+}
+#cssmenu ul ul{
+    position:absolute;
+    left:-9999px
+}
+#cssmenu ul ul li{
+    height:0;
+    -webkit-transition:all .25s ease;
+    -ms-transition:all .25s ease;
+    background:#333;
+    transition:all .25s ease
+}
+#cssmenu ul ul li:hover{
+
+}
+#cssmenu li:hover > ul{
+    left:auto
+}
+#cssmenu li:hover > ul > li{
+    height:35px
+}
+#cssmenu ul ul ul{
+    margin-left:100%;
+    top:0
+}
+#cssmenu ul ul li a{
+    
+    border-bottom:1px solid rgba(150,150,150,0.15);
+    /*Submenu*/ 
+    padding:11px 15px;
+    
+    /*ancho submenu*/
+    width:148px;
+    font-size:12px;
+    text-decoration:none;
+    color:#ddd;
+    font-weight:400;}
+#cssmenu ul ul li:last-child > a,#cssmenu ul ul li.last-item > a{
+    border-bottom:0
+}
+#cssmenu ul ul li:hover > a,#cssmenu ul ul li a:hover{
+    color:#fff;
+}
+#cssmenu ul ul li.has-sub > a:after{
+    position:absolute;
+    top:16px;
+    right:11px;
+    width:8px;
+    height:2px;
+    display:block;
+    background:#ddd;
+    content:''
+}
+#cssmenu ul ul li.has-sub > a:before{
+    position:absolute;
+    top:13px;
+    right:14px;
+    display:block;
+    width:2px;
+    height:8px;
+    background:#ddd;
+    content:'';
+    -webkit-transition:all .25s ease;-ms-transition:all .25s ease;transition:all .25s ease
+}
+#cssmenu ul ul > li.has-sub:hover > a:before{
+    top:17px;
+    height:0
+}
+#cssmenu ul ul li.has-sub:hover,#cssmenu ul li.has-sub ul li.has-sub ul li:hover{
+    background:#363636;
+}
+#cssmenu ul ul ul li.active a{
+    border-left:1px solid #333
+}
+#cssmenu > ul > li.has-sub > ul > li.active > a,#cssmenu > ul ul > li.has-sub > ul > li.active> a{
+    border-top:1px solid #333
+}
+
+
+/*si se cambia el tamaño de pantalla cambiarlo tambien en menu.js que esta en resources/js*/
+@media screen and (max-width:1150px){
+.logo{position:absolute;top:0;left: 0;width:100%;height:46px;text-align:center;padding:10px 0 0 0 ;float:none}
+.logo2{display:none}
+nav{width:100%;}
+#cssmenu{width:100%}
+#cssmenu ul{width:100%;display:none}
+#cssmenu ul li{width:100%;border-top:1px solid #444}
+#cssmenu ul li:hover{background:#363636;}
+#cssmenu ul ul li,#cssmenu li:hover > ul > li{height:auto}
+#cssmenu ul li a,#cssmenu ul ul li a{width:100%;border-bottom:0}
+#cssmenu > ul > li{float:none}
+#cssmenu ul ul li a{padding-left:25px}
+#cssmenu ul ul li{background:#333!important;}
+#cssmenu ul ul li:hover{background:#363636!important}
+#cssmenu ul ul ul li a{padding-left:35px}
+#cssmenu ul ul li a{color:#ddd;background:none}
+#cssmenu ul ul li:hover > a,#cssmenu ul ul li.active > a{color:#fff}
+#cssmenu ul ul,#cssmenu ul ul ul{position:relative;left:0;width:100%;margin:0;text-align:left}
+#cssmenu > ul > li.has-sub > a:after,#cssmenu > ul > li.has-sub > a:before,#cssmenu ul ul > li.has-sub > a:after,#cssmenu ul ul > li.has-sub > a:before{display:none}
+#cssmenu #head-mobile{display:block;padding:23px;color:#ddd;font-size:12px;font-weight:700}
+.button{width:55px;height:46px;position:absolute;right:0;top:0;cursor:pointer;z-index: 12399994;}
+.button:after{position:absolute;top:22px;right:20px;display:block;height:4px;width:20px;border-top:2px solid #dddddd;border-bottom:2px solid #dddddd;content:''}
+.button:before{-webkit-transition:all .3s ease;-ms-transition:all .3s ease;transition:all .3s ease;position:absolute;top:16px;right:20px;display:block;height:2px;width:20px;background:#ddd;content:''}
+.button.menu-opened:after{-webkit-transition:all .3s ease;-ms-transition:all .3s ease;transition:all .3s ease;top:23px;border:0;height:2px;width:19px;background:#fff;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-ms-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg)}
+.button.menu-opened:before{top:23px;background:#fff;width:19px;-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-ms-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg)}
+#cssmenu .submenu-button{position:absolute;z-index:99;right:0;top:0;display:block;border-left:1px solid #444;height:46px;width:46px;cursor:pointer}
+#cssmenu .submenu-button.submenu-opened{background:#262626}
+#cssmenu ul ul .submenu-button{height:34px;width:34px}
+#cssmenu .submenu-button:after{position:absolute;top:22px;right:19px;width:8px;height:2px;display:block;background:#ddd;content:''}
+#cssmenu ul ul .submenu-button:after{top:15px;right:13px}
+#cssmenu .submenu-button.submenu-opened:after{background:#fff}
+#cssmenu .submenu-button:before{position:absolute;top:19px;right:22px;display:block;width:2px;height:8px;background:#ddd;content:''}
+#cssmenu ul ul .submenu-button:before{top:12px;right:16px}
+#cssmenu .submenu-button.submenu-opened:before{display:none}
+#cssmenu ul ul ul li.active a{border-left:none}
+#cssmenu > ul > li.has-sub > ul > li.active > a,#cssmenu > ul ul > li.has-sub > ul > li.active > a{border-top:none}
+}
+/*#################################################Responsive#####################################*/
+
+/*Smart resoluciones restringida, problema con layout de primefaces*/
+@media only screen and (min-width: 100px){
+/* Modificacion del espacio del contenido */    
+    #content{
+        display: none;
+    }
+    .datosClienteFactura{display: none}
+@media only screen and (min-width: 768px){
+/* Modificacion del espacio del contenido */    
+   
+     .datosClienteFactura{display: none}
+}
+
+/*Maximo permitido*/
+@media only screen and (min-width: 950px){
+/* Modificacion del espacio del contenido */
+  
+    #content{
+        alignment-adjust: central;
+        align-content: center;
+        margin: 0 auto;
+        margin-top: 20px;
+        height: 450px;
+        width: 90%;
+        background-color:  #F2F5F9 !important;
+
+        /*background:#dddddd;*/
+        /*Bordes redondeados*/
+        border-radius: 15px 15px 15px 15px;
+        -moz-border-radius: 15px 15px 15px 15px;
+        -webkit-border-radius: 15px 15px 15px 15px;
+        border: 0px ridge #3220a8;
+         display: block;
+        
+
+    }
+     /* Tabla Productos responsive Ocultar*/
+    .OcularProdCeldas{
+        display: none !important;
+    }
+    .OcularBotones{
+        display: none !important;
+        background: #158B4C !important; 
+        color:#FEFEFE !important;
+    }
+
+    .OcultarTexto{
+        display:  none !important;
+    }
+    
+    /*"GridBuscarDatosCliente*/
+.column1{width: 120px!important;height:auto !important; display:table-cell}
+.column2{width: 100px!important;height:auto !important; display:table-cell}
+.column3{width: 98px!important;height:auto !important; display:table-cell}
+.column4{width: 100px!important;height:auto !important;  display: none;}
+.column5{width: 101px!important;height:auto !important; display:table-cell}
+.column6{width: 222px!important;height:auto !important; display:table-cell}
+/*gridDatosCliente*/
+.columna2{width: 221px!important;height:auto !important; display:table-cell}
+.columna3{width: 101px!important;height:auto !important; display:table-cell}
+.columna4{width: 221px!important;height:auto !important; display:table-cell}
+/*prodPanel*/
+.columna2p{width: 221px!important;height:auto !important; display:table-cell}
+.columna3p{width: 101px!important;height:auto !important; display:table-cell}
+.columna4p{width: 100px!important;height:auto !important; display: none;}
+
+
+}
+
+
+/*Escritorio*/
+@media only screen and (min-width: 1200px){
+    
+    /* Modificacion del espacio del contenido */    
+    #content{
+        align-content: center;
+        /*centrar*/
+        margin: 0 auto;
+
+        margin-top: 20px;
+        width: 70%;
+        height: 450px;
+        
+          background-color:  #F2F5F9 !important;
+
+
+        /*Bordes redondeados*/
+        border-radius: 15px 15px 15px 15px;
+        -moz-border-radius: 15px 15px 15px 15px;
+        -webkit-border-radius: 15px 15px 15px 15px;
+        border: 0px ridge #3220a8;
+        display: block;
+
+    }
+
+
+    /* Tabla Productos responsive Mostrar*/
+    .OcularProdCeldas{
+        display: table-cell !important;
+    }
+
+    .OcularBotones{
+        display:  block !important;
+        background: #158B4C !important; 
+        color:#FEFEFE !important;
+    }
+    .OcultarTexto{
+        display:  block !important;
+    }
+      /*"GridBuscarDatosCliente*/
+.column1{width: 120px !important;height:auto !important; display:table-cell;}
+.column2{width: 100px !important;height:auto !important; display:table-cell;}
+.column3{width: 100px !important;height:auto !important; display:table-cell;}
+.column4{width: 100px !important;height:auto !important; display:table-cell; }
+.column5{width: 100px !important;height:auto !important; display:table-cell}
+.column6{width: 100px !important;height:auto !important; display:table-cell}
+/*gridDatosCliente*/
+.columna2{width: 221px!important;height:auto !important; display:table-cell;}
+.columna3{width: 101px!important;height:auto !important; display:table-cell;}
+.columna4{width: 221px!important;height:auto !important; display:table-cell;}
+/*prodPanel*/
+.columna2p{width: 221px!important;height:auto !important; display:table-cell}
+.columna3p{width: 101px!important;height:auto !important; display:table-cell}
+.columna4p{width: 100px!important;height:auto !important; display:table-cell;}
+.datosClienteFactura {display:block}
 
 }

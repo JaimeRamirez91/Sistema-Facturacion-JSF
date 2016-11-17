@@ -4,7 +4,8 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
 
     <h:head>
         <!--  Solucion al problema de f5 y cuando dejan de funcional los js y los menus dinamicos(para dispositivos moviles)-->
@@ -25,7 +26,7 @@
             
             <h:outputStylesheet name="bootstrap/css/bootstrap.css" />
             <h:outputStylesheet name="css/dashboard.css" />
-             <h:outputStylesheet name="css/MyStile.css" />
+            
               <h:outputStylesheet name="css/normalize.css" />
               <h:outputStylesheet name="css/new.css" />
 
@@ -67,7 +68,7 @@
                                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Administración<b class="caret"></b></a>
 
                                         <ul class="dropdown-menu">
-                                            <li><a href="mavenproject1/Vistas/Clientes/Clientes.xhtml">Usuarios</a></li>
+                                            <li><a href="../Vistas/Clientes/Clientes.xhtml">Usuarios</a></li>
                                             <li><a href="#">Ventas</a></li>
                                             <li><a href="#">Categorias</a></li>
                                             <li><a href="#">Proveedores</a></li>
@@ -83,7 +84,7 @@
                     
                     </div>
                     <div class="container-fluid">
-                    <h:form>  
+                    <h:form> 
                     <p:menubar styleClass="menubar">
 
                         <p:submenu label="Inicio" icon="ui-icon-home" styleClass="submenubar2">

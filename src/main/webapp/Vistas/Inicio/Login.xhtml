@@ -17,22 +17,23 @@
                     <p:panel  style=" width: 400px; height: 200px; margin: 0 auto; margin-top: 10%;">
                         <f:facet name="header" class="header">Inicio de Sesión</f:facet>
                         <!-- Style color: black , soluciona el bug de texto blanco.. usando el msj--> 
-                        <p:panelGrid columns="2" style=" width: 350px; height: 90px; margin: 0 auto; margin-top: 3%;">
-                            <h:outputText value = "Usuario:"/>
+                        <p:panelGrid columns="2" style=" width: 350px; height: 90px; margin: 0 auto; margin-top: 3%;  text-align: left;">
+                            <h:outputText  value = "Usuario:" class="icon-user-tie">  </h:outputText>
                             <p:inputText  id="prue" value = "#{login.usr.aliass}" style="color: black;" required="true" requiredMessage="Campo requerido, Usuario."/>
-                            <h:outputText value = "Contraseña:"/>
+                            <h:outputText value = "Contraseña:"  class="icon-key2" > </h:outputText>
                             <p:password value = "#{login.usr.passUsr}" required="true" style="color: black;"  requiredMessage="Campo requerido, Contraseña."/>  
                         </p:panelGrid>
-                        <p:separator/>
-                        <p:commandButton  id="btn" value="Login"  update="frmLogin" styleClass="btnModificar" action="#{login.login(event)}" >
+                        <p:separator style="margin-top: 6px;"/>
+                        <p:commandButton  id="btn" value="Login"  update="frmLogin" style="margin-top: 8px;" styleClass="btn-success" action="#{login.login(event)}" >
                             <p:effect type="puff" event="click" for="img">
                                 <f:param name="mode" value="'btn'" />
                             </p:effect>
                         </p:commandButton>  
-
+             
                     </p:panel>
+                    <!-- http://ajaxload.info/ -->
                     <center>
-                    <p:graphicImage id="img" name="/images/loader.gif" style="display:none; margin-top: 50px;" />
+                        <p:graphicImage id="img" name="/images/ajax-loader.gif"   style="display:none; margin-top: 50px;" />
                     </center>
                 </h:form>
             </ui:define>

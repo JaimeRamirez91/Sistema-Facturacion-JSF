@@ -4,7 +4,8 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:jsf="http://xmlns.jcp.org/jsf">
 
     <h:head>
         <!--  Solucion al problema de f5 y cuando dejan de funcional los js y los menus dinamicos(para dispositivos moviles)-->
@@ -13,31 +14,51 @@
         <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/f.ico']}"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <h:outputStylesheet name="./css/normalize.css"/>
-        <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
+         <h:outputStylesheet name="./fuentes/Icon.css"/>
         <h:outputLink  />
+        <h:outputScript library="primefaces" name="jquery/jquery.js" />
+        <h:outputScript library="js" name="menu.js" />
+
 
         <title> Sistema de Facturación</title> 
     </h:head>
 
-    <h:body>
-        
+    <h:body >
+
         <div id="Divgeneral">
+
             <div id="top" >
                 <ui:insert name="top">
                     <h1>SISTEMA DE FACTURACIÓN</h1>
                 </ui:insert>
             </div>
-            <div id="menu">
+            <!--      z-index:1; superpone el div y evita que los elementos primefaces se puperpongan al          -->
+            <div id="menu" style=" z-index:1;">
                 <ui:insert name="menu" >
-                    <h:form>  
-                        
-                        <p:menubar styleClass="menu"  model="#{menuBeen.model}">
-                            <f:facet name="options">
-                                <p:commandButton id="btn1" style="background: #B40404; color:#FEFEFE;" value ="cerrar sesión" action="#{login.clssession()}" />
-                            </f:facet>  
-                        </p:menubar>
-                    </h:form>
+                    <!-- ejecutar html desde Java si no funciona add <pre> inicio y al final-->
+                    <nav id='cssmenu'>
+                              
+                        <div class="logo">  <a href="" >
+             
+                                <h:form style="text-align: center; position:  relative;">
+                                      
+                                    <p:commandLink id="btn1"   value="Cerrar Sesión" style=" font-size: 14px !important;  color: whitesmoke; "  action="#{login.clssession()}"/>
+    
+                                </h:form>
+                              
+                            </a> 
+                        </div>
+                        <div id="head-mobile"></div>
+                        <div class="button">
+                        </div>
+                        <ul>   
+
+                            <h:outputText value="#{menuBeen.ff()}" escape="false"/>             
+                        </ul>
+
+
+                    </nav>
                 </ui:insert>
             </div>
             <div id="content" class="contenido">

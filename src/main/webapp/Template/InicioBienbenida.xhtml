@@ -2,27 +2,59 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
-
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-         <!-- icono de la pagina, pestaña de navegación -->
+        <!-- icono de la pagina, pestaña de navegación -->
         <link rel="shortcut icon" type="image/x-icon" href="#{resource['images/f.ico']}"/>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-        
+
         <h:outputStylesheet name="./css/normalize.css"/>
-        <h:outputStylesheet name="./css/default.css"/>
         <h:outputStylesheet name="./css/cssLayout.css"/>
-        <title>Login</title>
+        <h:outputScript library="primefaces" name="jquery/jquery.js" />
+        <h:outputScript library="js" name="menu.js" />
+        <!--                  Es de bienbenida                      -->
+        <title>Bienbenida</title>
     </h:head>
 
     <h:body>
 
         <div id="top" class="top">
-            <ui:insert name="top">Top</ui:insert>
+            <ui:insert name="top">  </ui:insert>
         </div>
+        <!-- styleclass = "menu" para cambiar color y descomentar la personalisacion de css .ui-menubar-->
+        <div id="menu">
+            <ui:insert name="menu" >
+                <!-- ejecutar html desde Java si no funciona add <pre> inicio y al final-->
+                <nav id='cssmenu'>
+                    <div class="logo">  <a href="" >
+                             
+                                <h:form style="text-align: center; position:  relative;">
+                                    <p:commandLink id="btn1"   value="Cerrar Sesión" style=" font-size: 14px !important;  color: whitesmoke;"  action="#{login.clssession()}" />
+                                </h:form>
+                              
+                            </a> 
+                        </div>
+                    <div id="head-mobile"></div>
+                    <div class="button"></div>
+                    <ul>
+                            <h:outputText value="#{menuBeen.ff()}" escape="false"/> 
+                    </ul>
+                </nav>
+            </ui:insert>
+        </div>
+
         <div id="ContLogin" class="ContLogin">
-            <ui:insert name="Login">Contenido</ui:insert>
+            <ui:insert name="Login"> 
+            </ui:insert>
         </div>
+        <script>
+
+        </script>
+
+
+
     </h:body>
 
 </html>
+

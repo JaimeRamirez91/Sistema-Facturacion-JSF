@@ -24,6 +24,5 @@ public class CategoriaBeen implements Serializable{
     public void setListaCategorias(List<Categoria> listaCategorias) {
         this.listaCategorias = listaCategorias;
     }
-    
-    
+       
 }

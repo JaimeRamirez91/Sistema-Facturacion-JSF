@@ -5,7 +5,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:p="http://primefaces.org/ui">
-
+    <!--Iconos primefaces http://www.primefaces.org/showcase/ui/misc/fa.xhtml -->
     <body>
         <!--  Solucion al problema de f5 y cuando dejan de funcional los js y los menus dinamicos(para dispositivos moviles)-->
         <meta http-equiv="refresh" content="URL=#"/>
@@ -13,80 +13,94 @@
             <ui:define name="content">
 
 
-                <h:form id="formFacturas">
+                <h:form id="formFacturas" styleClass="formularios">
                     <p:growl id="mensajeGeneral"  showDetail="true"  autoUpdate="true" life="3000"></p:growl>
-                    
+
                     <p:panel  id="panel"  styleClass="panel" >
                         <f:facet name="header" >
-                               <h:outputText value="Ventas" />
+                            <h:outputText value="Datos Cliente" />
                         </f:facet>
 
-                        <p:layout id="capaDatosClienteFactura" styleClass="datosClienteFactura"  >
+                        <p:layout id="DatosClienteFactura" styleClass="datosClienteFactura">
                             <p:layoutUnit id="DatosCliente" styleClass="datosCliente" position="center" >
-                                <p:panelGrid  id="GridBuscarDatosCliente" columns="8">
-                                     <p:outputLabel value="Código cliente:"/> 
-                                     <p:inputText id="txtBuscarCliente" value="#{clientebeen.codigoCliente}" size="12" >
+                                <p:panelGrid  id="GridBuscarDatosCliente" style="margin-top: 2px;" columnClasses="column1,column2,column3,column4,column5,column6," columns="8">
+                                      
+                                    <p:outputLabel value="Código cliente:"  /> 
+                                    <p:inputText id="txtBuscarCliente" value="#{clientebeen.codigoCliente}" size="10" >
                                     </p:inputText>
-                                     <p:commandButton value="Buscar" actionListener= "#{clientebeen.agregarDatosCliente2()}" styleClass="btnModificar"  resetValues="true" update=":formFacturas:gridDatosCliente  "/>
-                                     <p:commandButton value="..."  styleClass="btnModificar" oncomplete="PF('dialogoClientes').show();" />
-                                      <p:outputLabel value="Fecha:"/>
-                                    <p:outputLabel value="16-05-2016"/>
-                                    <p:outputLabel value="Fecha del sistema:"/>
-                                    <p:outputLabel value="16-05-2016"/>
+                                    <p:commandButton icon="fa fa fa-search"  value="Buscar" actionListener= "#{clientebeen.agregarDatosCliente2()}" styleClass="btn-success"  resetValues="true" update=":formFacturas:gridDatosCliente  "/>
+                                    <p:commandButton value="...." icon="fa fa fa-edit" styleClass="OcularBotones btn-success" oncomplete="PF('dialogoClientes').show();" />
+                                    <p:outputLabel value="Fecha:    "/>
+                                    <p:outputLabel value="16-05-2016" style="width: 100px;"/>
+
                                 </p:panelGrid>
-                                <p:separator/>
-                                <h:panelGrid id="gridDatosCliente" columns="2">
-                                    <p:outputLabel value="Nombre:"/>
-                                    <p:outputLabel id="lblNombreCliente" value="#{clientebeen.cliente.cliNombre} #{clientebeen.cliente.cliApellidos}"/>
-                                    <p:outputLabel value="Dirección:" />
-                                    <p:outputLabel id="lblDireccionCliente" value="#{clientebeen.cliente.cliDireccion}"/>
-                                </h:panelGrid>
+
+                                <p:panelGrid  id="gridDatosCliente" columns="4"   columnClasses="column1,columna2,columna3,columna4">
+                                    <p:outputLabel  value="Nombre:"/>
+
+                                    <p:inputText required="true"  size="25" value="#{clientebeen.cliente.cliNombre} #{clientebeen.cliente.cliApellidos}"
+                                                 readonly="true"/>
+                                    <p:outputLabel  value="Dirección: "/>
+                                    <p:inputText required="true"   size="25" value="#{clientebeen.cliente.cliDireccion}"
+                                                 readonly="true"/>
+
+
+                                </p:panelGrid>
                             </p:layoutUnit>
+
                             <p:layoutUnit id="datosFactura" styleClass="datosFactura" position="east">
                                 <h:panelGrid columns="1">
                                     <h:outputLabel value="FACTURA"/>
                                     <h:outputLabel value="00001"/>
                                     <p:separator/>
+
                                 </h:panelGrid>
 
                             </p:layoutUnit>
                         </p:layout>
-                        <p:panelGrid columns="4">
-                            <p:outputLabel value="Código de barrra:"/>
-                            <p:inputText  size="12"/>
-                            <p:commandButton value="Buscar" styleClass="btnModificar"/>
-                            <p:commandButton value="...." styleClass="btnModificar" oncomplete="PF('dialogoProducto').show();" />
-                        </p:panelGrid>
-                        <p:separator/>
-                        
-                        <p:dataTable id="tablaProductos"  var="producto" value="#{ventasbeen.listadetallefactura}"
-                                     rowStyleClass="ejemplo, ejemplo2"  emptyMessage="No se han encontrado registros.">
-                            <f:facet name="header">
-                                <h:outputText value="Productos" style="color: white;" />
-                            </f:facet>
-                            <p:column headerText="Código de barra" >
-                                
-                                <h:outputText value="#{producto.producto.proCodigoBarra}"/>
-                            </p:column>
-                            <p:column headerText="Producto">
-                                <h:outputText value="#{producto.producto.proNombre}"/>
-                            </p:column>
-                            <p:column headerText="Cantidad">
-                                 <h:outputText value=" 1/u "/>
-                            </p:column>
-                            <p:column headerText="Precio venta">
-                                <h:outputText value="#{producto.producto.proPrecio}"/>
-                            </p:column>
-                            <p:column headerText="Total">
 
-                            </p:column>
-                        </p:dataTable>
-                        <p:outputLabel value="Total venta: $ 100  "/>
+ 
+                        <p:panel style="margin-top: 20px; height: 80px;">
+                        <f:facet name="header" >
+                            <h:outputText value="Productos" style="margin-left: 0px; margin-right: -12px;"/>
+                        </f:facet>
+                            <p:panelGrid id="prodPanel" columns="4"  columnClasses="column1,columna2p,columna3p,columna4p" style="font-size: 14px !important; margin-left: -15px; margin-top: -4px;">
+                                <p:outputLabel value="Código de barrra:" style="margin-left: -12px;"/>
+                                <p:inputText  size="25"/>
+                                <p:commandButton value="Buscar" icon="fa fa fa-search"  styleClass="btn-success"/>
+                                <p:commandButton value="....." icon="fa fa fa-edit" styleClass="OcularBotones btn-success" oncomplete="PF('dialogoProducto').show();" />
+                            </p:panelGrid>
+                        </p:panel>
+
+                        <p:panel style=" margin-top: 2px; height: 205px;">
+                            <p:dataTable id="tablaProductos"  var="producto" value="#{ventasbeen.listadetallefactura}"
+                                         rowStyleClass="ejemplo, ejemplo2"  emptyMessage="No se han encontrado registros." paginator="true" paginatorPosition="top" rows="4" >
+                               
+                                <p:column headerText="Código de barra" >
+
+                                    <h:outputText value="#{producto.producto.proCodigoBarra}"/>
+                                </p:column>
+                                <p:column headerText="Producto">
+                                    <h:outputText value="#{producto.producto.proNombre}"/>
+                                </p:column>
+                                <p:column headerText="Cantidad">
+                                    <h:outputText value=" 1/u "/>
+                                </p:column>
+                                <p:column headerText="Precio venta">
+                                    <h:outputText value="#{producto.producto.proPrecio}"/>
+                                </p:column>
+                                <p:column headerText="Total">
+
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+
+                        <p:outputLabel value="Total venta: $ 100  " style="margin-top: 3px;"/>
                         <p:outputLabel value="Total a vender: $100"/>
-                        <p:separator/>
-                        <p:commandButton value="Registrar" styleClass="btnModificar"/>
-                        <p:commandButton value="Imprimir" styleClass="btnModificar"/>
-                        <p:commandButton value="Cancelar" styleClass="btnModificar"/>
+                        <p:separator style="margin-top: 5px;"/>
+                        <p:commandButton value="Registrar" styleClass="btn btn-info" style="margin-top: 2px;"/>
+                        <p:commandButton value="Imprimir" styleClass="btn-success" style="margin-top: 2px;"/>
+                        <p:commandButton value="Cancelar"  styleClass="btn btn-danger" style="margin-top: 2px;"/>
                     </p:panel>
 
 
@@ -114,7 +128,7 @@
                             </p:column>
                             <p:column headerText="Seleccionar">
 
-                                <p:commandButton value="Seleccionar"  style="background: #158B4C; color:#FEFEFE; " actionListener="#{clientebeen.agregarDatosCliente(cl.idCliente)}"
+                                <p:commandButton value="Seleccionar"   styleClass="btn-success"  actionListener="#{clientebeen.agregarDatosCliente(cl.idCliente)}"
                                                  oncomplete="PF('dialogoClientes').hide();"
                                                  update=":formFacturas:gridDatosCliente">
 
@@ -123,7 +137,7 @@
                         </p:dataTable>
                         <center>
                             <p:separator></p:separator>
-                            <p:commandButton value="cerrar" style="background: Red; color:#FEFEFE; " onclick="PF('dialogoClientes').hide();"/>
+                            <p:commandButton value="cerrar" styleClass="btn-danger" onclick="PF('dialogoClientes').hide();"/>
                         </center>
                     </p:dialog>
 
@@ -131,12 +145,12 @@
                     <p:dialog id="dlgProducto" widgetVar="dialogoProducto" modal="true" showEffect="explode" hideEffect="explode" 
                               styleClass="dialogoClientes" resizable="false" position="center" responsive="true"  draggable="false" closeOnEscape="true">
 
-                        
+
 
                         <p:dataTable id="tablaProdAUX" paginator="true" paginatorPosition="top" style="width: 700px;" 
                                      var="pro" value="#{DetalleProductoBeen.listadelatte}" rows="5"
                                      >
-                             <f:facet name="header">
+                            <f:facet name="header">
                                 <h:outputText value="Producto" style="color: white;" />
                             </f:facet>
                             <p:column headerText="N°">
@@ -149,7 +163,7 @@
                                 <h:outputText value="#{pro.producto.proPrecio}"/>
                             </p:column>
                             <p:column headerText="Seleccionar">
-                                <p:commandButton value="Seleccionar" styleClass="btnModificar" actionListener="#{ventasbeen.agregarDatosProducto(pro.producto.proCodigoBarra)}"
+                                <p:commandButton value="Seleccionar"  styleClass="btn-success" actionListener="#{ventasbeen.agregarDatosProducto(pro.producto.proCodigoBarra)}"
                                                  onclick= "PF('dialogoProducto').hide();"
                                                  update=":formFacturas:tablaProductos">
 
@@ -158,7 +172,7 @@
                         </p:dataTable>
                         <center>
                             <p:separator/>
-                            <p:commandButton value="cerrar" style="background: #B40404; color:#FEFEFE; " onclick="PF('dialogoProducto').hide();"/>
+                            <p:commandButton value="cerrar" styleClass="btn-danger" onclick="PF('dialogoProducto').hide();"/>
                         </center>
                     </p:dialog>
                 </h:form>
