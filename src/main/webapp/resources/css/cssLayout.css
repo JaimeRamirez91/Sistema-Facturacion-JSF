@@ -613,20 +613,7 @@ nav{width:100%;}
 /*#################################################Responsive#####################################*/
 
 /*Smart resoluciones restringida, problema con layout de primefaces*/
-@media only screen and (min-width: 100px){
-/* Modificacion del espacio del contenido */    
-    #content{
-        display: none;
-    }
-    .datosClienteFactura{display: none}
-@media only screen and (min-width: 768px){
-/* Modificacion del espacio del contenido */    
-   
-     .datosClienteFactura{display: none}
-}
-
-/*Maximo permitido*/
-@media only screen and (min-width: 950px){
+@media only screen and (min-width: 400px){
 /* Modificacion del espacio del contenido */
   
     #content{
@@ -664,19 +651,75 @@ nav{width:100%;}
     
     /*"GridBuscarDatosCliente*/
 .column1{width: 120px!important;height:auto !important; display:table-cell}
-.column2{width: 100px!important;height:auto !important; display:table-cell}
+.column2{width: 221px!important;height:auto !important; display:table-cell}
 .column3{width: 98px!important;height:auto !important; display:table-cell}
 .column4{width: 100px!important;height:auto !important;  display: none;}
-.column5{width: 101px!important;height:auto !important; display:table-cell}
-.column6{width: 222px!important;height:auto !important; display:table-cell}
+.column5{width: 101px!important;height:auto !important; display:none}
+.column6{width: 222px!important;height:auto !important; display:none}
 /*gridDatosCliente*/
 .columna2{width: 221px!important;height:auto !important; display:table-cell}
-.columna3{width: 101px!important;height:auto !important; display:table-cell}
-.columna4{width: 221px!important;height:auto !important; display:table-cell}
+.columna3{width: 101px!important;height:auto !important; display:none}
+.columna4{width: 221px!important;height:auto !important; display:none}
 /*prodPanel*/
 .columna2p{width: 221px!important;height:auto !important; display:table-cell}
 .columna3p{width: 101px!important;height:auto !important; display:table-cell}
-.columna4p{width: 100px!important;height:auto !important; display: none;}
+.columna4p{width: 100px!important;height:auto !important; display:none}
+
+
+}
+/*Maximo permitido*/
+@media only screen and (min-width: 800px){
+/* Modificacion del espacio del contenido */
+  
+    #content{
+        alignment-adjust: central;
+        align-content: center;
+        margin: 0 auto;
+        margin-top: 20px;
+        height: 450px;
+        width: 80%;
+        background-color:  #F2F5F9 !important;
+
+        /*background:#dddddd;*/
+        /*Bordes redondeados*/
+        border-radius: 15px 15px 15px 15px;
+        -moz-border-radius: 15px 15px 15px 15px;
+        -webkit-border-radius: 15px 15px 15px 15px;
+        border: 0px ridge #3220a8;
+         display: block;
+        
+
+    }
+     /* Tabla Productos responsive Ocultar*/
+    .OcularProdCeldas{
+        display: none !important;
+    }
+    .OcularBotones{
+        display: none !important;
+        background: #158B4C !important; 
+        color:#FEFEFE !important;
+    }
+
+    .OcultarTexto{
+        display:  none !important;
+    }
+    
+    
+    /*"GridBuscarDatosCliente*/
+.column1{width: 120px!important;height:auto !important; display:table-cell}
+.column2{width: 221px!important;height:auto !important; display:table-cell}
+.column3{width: 98px!important;height:auto !important; display:table-cell}
+.column4{width: 100px!important;height:auto !important;  display: none;}
+.column5{width: 101px!important;height:auto !important; display:none}
+.column6{width: 222px!important;height:auto !important; display:none}
+/*gridDatosCliente*/
+.columna2{width: 221px!important;height:auto !important; display:table-cell}
+.columna3{width: 98px!important;height:auto !important; display:table-cell}
+.columna4{width: 221px!important;height:auto !important; display:none}
+/*prodPanel*/
+.columna2p{width: 221px!important;height:auto !important; display:table-cell}
+.columna3p{width: 101px!important;height:auto !important; display:table-cell}
+.columna4p{width: 100px!important;height:auto !important; display:none}
 
 
 }
@@ -736,6 +779,5 @@ nav{width:100%;}
 .columna2p{width: 221px!important;height:auto !important; display:table-cell}
 .columna3p{width: 101px!important;height:auto !important; display:table-cell}
 .columna4p{width: 100px!important;height:auto !important; display:table-cell;}
-.datosClienteFactura {display:block}
 
 }

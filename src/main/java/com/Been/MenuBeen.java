@@ -98,6 +98,8 @@ public class MenuBeen implements Serializable{
      public String ff(){
          boolean bandera = true;
          String menu = " "; 
+         try {
+             
         Usuarios us = (Usuarios) FacesContext.getCurrentInstance().getExternalContext().getSessionMap().get("usuario");
       
            for(Menu m: lista){
@@ -147,24 +149,12 @@ public class MenuBeen implements Serializable{
            //Se eliminan los ul que son inecesarios
            menu  = menu.replace("<ul></ul>"," ");
            //retorna el html renderisado
-           return menu;
+          
+            } catch (Exception e) {
+                menu = " ";
+         }
+          return menu;
     }
      
-   /* public String menu(){
-        // String menu =  "<h1> hola mundo es una prueba </h1> http://www.w3schools.com/";
-       
-         String menu =   "<ul>"+
-                             "<li><a class='active' href='../Inicio/Inicio.xhtml'>Inicio</a></li>"+ 
-                             "<li><a href='../Ventas/Factura.xhtml'>Ventas</a></li>"+
-                             "<li class='submenu'>"+
-                              "<a href='#'><span class='icon-rocket'></span>Proyectos<span class='caret icon-arrow-down6'>"+
-                              "</span></a>"+
-					"<ul class='children'>"+
-						"<li><a href='#'>SubElemento #1 <span class='icon-dot'></span></a></li>"+
-							"</ul>"+
-                 "</li>"+
-                             "<li><a href='../Producto/Producto.xhtml'>Productos</a></li>"+
-                        "</ul>"; 
-         return menu;
-    }*/
+  
 }
