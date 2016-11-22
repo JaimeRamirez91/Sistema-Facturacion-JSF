@@ -164,11 +164,21 @@
 }
 
 /*Posición de los mensajes emergentes*/
+/*.ui-growl {
+  margin-top: 100px;
+  right: 200px; 
+  text-align: center;
+   
+}*/
 .ui-growl {
-    margin-top: 100px;
-    right: 200px;  
+ margin-top: 100px;  
+  width: 270px !important;
+ 
 }
-
+ 
+.ui-growl-message {
+        width:190px !important;
+}
 /* color al heder con f:facet*/
 .ui-panel .ui.panel-grid .header{
     background: #045491 !important;

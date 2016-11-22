@@ -139,14 +139,19 @@
                         <p:column headerText="Proveedor">
                             <h:outputText value="#{ct.proveedor.proNombre}"/>
                         </p:column>
-                        <p:column headerText="Tel. proveedor" class="OcularProdCeldas">
-                            <h:outputText value="#{ct.proveedor.telefono}"/>
-                        </p:column>
-                        <p:column headerText="Dirección proveedor" class="OcularProdCeldas">
-                            <h:outputText value="#{ct.proveedor.proDireccion}"/>
+                        
+                        <p:column headerText="Existencias" class="OcularProdCeldas">
+                            <h:outputText value="#{ct.producto.stock}"/>
                         </p:column>
                         <p:column headerText="Categoría">
                             <h:outputText value="#{ct.categoria.categoria}"/>
+                        </p:column>
+                        
+                        <p:column headerText="Agregar Inventario">
+                            <p:commandButton  icon="fa fa-plus" title="Add"  styleClass="btn-primary"  oncomplete="PF('DialogoModificarProducto').show();"
+                                             update=":frmModificarProducto"  >
+                                
+                            </p:commandButton>
                         </p:column>
                         <p:column headerText="Modificar">
                             <p:commandButton  icon="fa fa fa-edit" title="Modificar"  styleClass="btn btn-success"  oncomplete="PF('DialogoModificarProducto').show();"
@@ -155,6 +160,12 @@
                                 <f:setPropertyActionListener target="#{DetalleProductoBeen.detalle}" value="#{ct}"/>
                                 <f:setPropertyActionListener target="#{DetalleProductoBeen.categoria}" value="#{ct.categoria}"/>
                                 <f:setPropertyActionListener target="#{DetalleProductoBeen.proveedor}" value="#{ct.proveedor}"/>
+                            </p:commandButton>
+                        </p:column>
+                        <p:column headerText="Eliminar">
+                            <p:commandButton  icon="fa fa fa-trash" title="Add"  styleClass="btn btn-danger"  oncomplete="PF('DialogoModificarProducto').show();"
+                                             update=":frmModificarProducto"  >
+                                
                             </p:commandButton>
                         </p:column>
                     </p:dataTable>
